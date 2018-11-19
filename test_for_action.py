@@ -50,8 +50,40 @@ print('L2 no item is same ')
 print(L2)
 print(len(L2))
 
+########################################################################
 #L1 including time and action eg : L1[ 194 ] 19:04:48,202VerifyFSATcp
 #classify L1 using different actions
+#L2[0:len[L2]]
+class_for_each=[]
+times_for_each=[]
+k=0
+dutation=[]
+for n in range(len(L2)):
+    #class_for_each.append(L2[n])
+    class_for_each=L2[n]
+    n=n+1
+    print(class_for_each)
+    #print(class_for_each[0],class_for_each.[1])
+    for item in L1:
+        if re.findall(class_for_each,item):
+            class_for_each.append(item)
+            print('class_for_each',n,class_for_each)
+            l=len(class_for_each)
+            print(l)
+            for i in range(len(class_for_each)):
+                times_for_each.append(class_for_each[i][0:12])
+                i=i+1
+                print('times_for_each=',times_for_each)
+                while k<=len(times_for_each):
+                    time_start=datetime.datetime.strptime(times_for_each[k], '%H:%M:%S,%f')
+                    time_end=datetime.datetime.strptime(times_for_each[k+1], '%H:%M:%S,%f')
+                    k=k+2
+                    dutation.append(time_end-time_start)
+                    print(time_end-time_start)
+                    if(k>=len(times_for_each)):
+                        break
+                print(dutation)
+##########################################################################        
 Delay=[]
 Verify=[]
 SendLINMSG=[]
