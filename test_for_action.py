@@ -106,8 +106,6 @@ sort_dic_for_all_action=sorted(dic_average_for_all_action)
 print('sort_average_for_all_action',sort_average_for_all_action)
 print('sort_dic_average_for_all_action',sort_dic_for_all_action)
 ##sort_average_for_all_action should contanst with its name "class_for_each"
-##verify need to find out more correctly
-##!!!
 
 #生成excel文件
 def generate_excel(action_log):
